@@ -1,0 +1,46 @@
+input
+{
+\\ params for system
+N = 4;
+J = 0.1;  
+Delta = 0.1; 
+disorder = 1.0;
+
+// params for system-reservoir-interaction
+include_bath_tensors = 1;
+gamma = 0.1;
+mu = 0.2;
+
+// params for time integration
+j = 1; // berechne jeden j-ten Zeitschritt
+dt = 0.1;
+T = 0.5;
+trotter_2nd_order = 1;
+trotter_3rd_order = 0;
+
+// params for approximation and average
+cutoff = 1E-8;
+maxm = 3000; // max 5000
+no_average = 3; // 1000
+
+// params for parameter calculation
+use_contraction_calc = 1;
+use_operator_calc = 0;
+timesteps_before_calc = 1; 
+check_steady_state = 0;
+min_const_timesteps_for_steady_state = 300;
+tolerance_for_steady_state = 0.01;
+calc_mag_profile = 1;
+calc_current_profile = 1;
+calc_entanglement_profile = 1;
+
+// params for initial state
+ground_state = 0;
+allup_state = 0;
+neel_state_first_up = 1; 
+neel_state_first_down = 0;
+quasi_steady_state = 0;
+alldown_oneup = 0;
+allup_onedown = 0;
+site_for_up_or_down = 0; // must be in 0,1..., N-1
+}
